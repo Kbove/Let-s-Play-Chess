@@ -10,7 +10,7 @@ Our website lets you play with just the people you want, instead of a computer o
   * [Screenshot](#screenshot)
   * [Resources](#resources)
   * [Contributions](#contributions)
-  * [License](#license)
+  * [Installation](#Installation)
     
     
 ## Usage
@@ -46,4 +46,5 @@ Project Manager: [Kyle Bove](https://github.com/Kbove)
 
 Git Manager: [Whitney Kropat](https://github.com/wkropat)  
   
-## License
+## Installation <a id="Installation"></a>
+You can clone the repo, navigate to the root file in CMD prompt and call with with nodemon index.js. You can then go to localhost:3000 on your local computer and start using the application. Or just click the heroku link.
