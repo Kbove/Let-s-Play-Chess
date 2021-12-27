@@ -47,4 +47,4 @@ Project Manager: [Kyle Bove](https://github.com/Kbove)
 Git Manager: [Whitney Kropat](https://github.com/wkropat)  
   
 ## Installation <a id="Installation"></a>
-You can clone the repo, navigate to the root file in CMD prompt and call with with nodemon index.js. You can then go to localhost:3000 on your local computer and start using the application. Or just click the heroku link.
+You can clone the repo, navigate to the root file, install the necessary dependencies, and then in CMD prompt and call with with nodemon index.js. You can then go to localhost:3000 on your local computer and start using the application. Or just click the heroku link.
