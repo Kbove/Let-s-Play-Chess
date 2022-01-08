@@ -35,6 +35,7 @@ Our new tech used was socket.io, which facilitates live notifications and game p
 
 We used [Bootstrap](https://getbootstrap.com/docs/3.4/css/) as our CSS framework and rendered html through handlebars.
 
+Deployed: https://letsplaychessproj2.herokuapp.com/
  
 ## Contributions
 
