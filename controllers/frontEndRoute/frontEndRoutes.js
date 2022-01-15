@@ -11,9 +11,10 @@ router.get("/",(req,res)=>{
 
 // Profile Page Get Request
 router.get("/profile",(req,res)=>{
+    console.log('sid', req.session.user.id)
     // IF not logged in, return to login page
     if(!req.session.user){
-        // return res.redirect("/")
+        return res.redirect("/")
     }
     // IF logged in, find user and render handblebars user page
     User.findByPk(req.session.user.id
