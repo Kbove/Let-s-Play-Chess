@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 3000;
 const {User, UserFriends, Lobby} = require('./models');
 
 const sess = {
-    secret: process.env.SESSION_SECRET,
+    secret: 'tacos',
     cookie: {
         maxAge:1000*60*60*2
     },
