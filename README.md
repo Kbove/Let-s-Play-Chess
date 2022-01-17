@@ -10,7 +10,7 @@ Our website lets you play with just the people you want, instead of a computer o
   * [Screenshot](#screenshot)
   * [Resources](#resources)
   * [Contributions](#contributions)
-  * [License](#license)
+  * [Installation](#Installation)
     
     
 ## Usage
@@ -35,6 +35,7 @@ Our new tech used was socket.io, which facilitates live notifications and game p
 
 We used [Bootstrap](https://getbootstrap.com/docs/3.4/css/) as our CSS framework and rendered html through handlebars.
 
+Deployed: https://letsplaychessproj2.herokuapp.com/
  
 ## Contributions
 
@@ -46,4 +47,5 @@ Project Manager: [Kyle Bove](https://github.com/Kbove)
 
 Git Manager: [Whitney Kropat](https://github.com/wkropat)  
   
-## License
+## Installation <a id="Installation"></a>
+You can clone the repo, navigate to the root file, install the necessary dependencies, and then in CMD prompt and call with with nodemon index.js. You can then go to localhost:3000 on your local computer and start using the application. Or just click the heroku link.
