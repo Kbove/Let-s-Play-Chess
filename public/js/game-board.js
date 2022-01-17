@@ -1114,7 +1114,7 @@ socket.on('game over', (socketObj) => {
                     throw (err)
                 }
             })
-            // document.location.replace('/profile')
+            document.location.replace('/profile')
         } else {
             console.log('you lost the game!');
             // TODO: update opponent stats to reflect that they lost
@@ -1158,7 +1158,7 @@ socket.on('game over', (socketObj) => {
                     throw (err)
                 }
             })
-            // document.location.replace('/profile')
+            document.location.replace('/profile')
         }
     } else {
         if(socketObj.winner === user.color){
@@ -1204,7 +1204,7 @@ socket.on('game over', (socketObj) => {
                     throw (err)
                 }
             })
-            // document.location.replace('/profile')
+            document.location.replace('/profile')
         } else {
             console.log('you lost the game!');
             // TODO: update host stats to reflect that they lost
@@ -1248,7 +1248,7 @@ socket.on('game over', (socketObj) => {
                     throw (err)
                 }
             })
-            // document.location.replace('/profile')
+            document.location.replace('/profile')
         }
     }
 });
