@@ -74,6 +74,9 @@ router.get("/lobby-guest", (req,res)=>{
 
 // Game Board Get Request
 router.get("/gameboard", (req,res)=> {
+    User.findByPk(req.session.user.id, {
+        
+    })
     res.render("game-board")
 })
 

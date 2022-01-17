@@ -42,6 +42,11 @@ User.init({
         allowNull: true,
         defaultValue:0,
     },
+    losses: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue:0,
+    },
     ties: {
         type: DataTypes.INTEGER,
         allowNull: true,

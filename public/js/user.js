@@ -91,7 +91,7 @@ addFriendBtn.addEventListener('click', (event) => {
 socket.on("friend request sent", friendReqSent)
 function friendReqSent(id){
     const friendReqList = document.getElementById("friend-request-list")
-    fetch('/api/users/' + id)
+    fetch(`/api/users/${id}`)
     .then(res => {
         console.log('================')
         console.log(res)

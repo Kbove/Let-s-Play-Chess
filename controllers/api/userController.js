@@ -24,8 +24,11 @@ router.get("/logout", (req,res)=>{
 
 router.get("/:id", (req, res) => {
     // Basic get Requests - get one
+    console.log('does this log? 2')
     User.findByPk(req.params.id).then(UserData => {
         if (UserData) {
+            console.log('sending user data', UserData)
+            // const UserData = UserData.get({plain:true})
             res.json({UserData})
         } else {
             res.status(404).json({err:"No such user."});
@@ -84,34 +87,51 @@ router.post("/login", (req, res) => {
     })
 })
 
-router.put("/:id", (req, res) => {
-    // Update User API Route
-    // 
+// router.put("/:id", (req, res) => {
+//     // Update User API Route
+//     // 
+//     User.update({
+//         username: req.body.username,
+//         email: req.body.email,
+//         ngames: req.body.ngames,
+//         wins: req.body.wins,
+//         ties: req.body.ties,
+//         user_rank: req.body.user_rank,
+//         // TODO
+//         // THIS IS WHERE LOGIC TO ADD PLAYED GAMES HAPPENS
+//         // Update user by id every time there is
+//     }, {
+//         where: {
+//             id: req.params.id
+//         }
+//     }).then(updatedData => {
+//         if (updatedData[0]) {
+//           res.json({updatedData});
+//         } else {
+//           res.status(404).json({ err: "no such user found!" });
+//         }
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         res.status(500).json({ err });
+//       });
+// })
+
+router.put('/:id', (req, res) => {
+    console.log('does this route get hit')
     User.update({
-        username: req.body.username,
-        email: req.body.email,
         ngames: req.body.ngames,
         wins: req.body.wins,
-        ties: req.body.ties,
-        user_rank: req.body.user_rank,
-        // TODO
-        // THIS IS WHERE LOGIC TO ADD PLAYED GAMES HAPPENS
-        // Update user by id every time there is
+        losses: req.body.losses
     }, {
         where: {
             id: req.params.id
         }
     }).then(updatedData => {
-        if (updatedData[0]) {
-          res.json({updatedData});
-        } else {
-          res.status(404).json({ err: "no such user found!" });
-        }
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json({ err });
-      });
+        res.json({updatedData})
+    }).catch(err => {
+        res.status(500).json({err})
+    })
 })
 
 router.delete("/:id", (req, res) => {

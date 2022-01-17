@@ -1074,21 +1074,181 @@ socket.on('game over', (socketObj) => {
         if(socketObj.winner === user.color){
             console.log('you won the game!');
             // TODO: update host stats to reflect that they won
-            document.location.replace('/profile')
+            fetch('/sessions').then(res => {
+                if (res.ok) {
+                    res.json().then(res => {
+                        const id = res.user.id
+                        fetch(`/api/users/${id}`).then(res => {
+                            console.log('user api response', res)
+                            if (res.ok) {
+                                res.json().then(res => {
+                                    const userObj = res
+                                    console.log("hello",userObj)
+                                    let losses = userObj.UserData.losses
+                                    let ngames = userObj.UserData.ngames
+                                    let wins = userObj.UserData.wins
+                                    console.log('stats',wins, losses, ngames )
+                                    wins = wins + 1 
+                                    ngames = ngames + 1
+                                    console.log('updated stats',wins, losses, ngames )
+                                    //write logic to calculate rank later
+                                    fetch(`/api/users/${id}`, {
+                                        method: 'PUT',
+                                        body: JSON.stringify({ wins, ngames, losses}),
+                                        headers: {'Content-Type' : 'application/json',}
+                                    })
+                                    if (response.ok) {
+                                        console.log('put request?')
+                                        // document.location.replace('/profile')
+                                    } else {
+                                        alert("Failed to update")
+                                    }
+                                })
+                            } else {
+                                alert("Failed to fetch user object")
+                            }
+                        })
+                    })
+                } else {
+                    // TODO: Show that there was an error and that the friend request wasn't sent
+                    throw (err)
+                }
+            })
+            // document.location.replace('/profile')
         } else {
             console.log('you lost the game!');
             // TODO: update opponent stats to reflect that they lost
-            document.location.replace('/profile')
+            fetch('/sessions').then(res => {
+                if (res.ok) {
+                    res.json().then(res => {
+                        const id = res.user.id
+                        fetch(`/api/users/${id}`).then(res => {
+                            console.log('user api response', res)
+                            if (res.ok) {
+                                res.json().then(res => {
+                                    const userObj = res
+                                    console.log("hello",userObj)
+                                    let losses = userObj.UserData.losses
+                                    let ngames = userObj.UserData.ngames
+                                    let wins = userObj.UserData.wins
+                                    console.log('stats',wins, losses, ngames )
+                                    losses = losses + 1 
+                                    ngames = ngames + 1
+                                    console.log('updated stats',wins, losses, ngames )
+                                    //write logic to calculate rank later
+                                    fetch(`/api/users/${id}`, {
+                                        method: 'PUT',
+                                        body: JSON.stringify({ wins, losses, ngames}),
+                                        headers: {'Content-Type' : 'application/json',}
+                                    })
+                                    if (response.ok) {
+                                        console.log('put request?')
+                                        // document.location.replace('/profile')
+                                    } else {
+                                        alert("Failed to update")
+                                    }
+                                })
+                            } else {
+                                alert("Failed to fetch user object")
+                            }
+                        })
+                    })
+                } else {
+                    // TODO: Show that there was an error and that the friend request wasn't sent
+                    throw (err)
+                }
+            })
+            // document.location.replace('/profile')
         }
     } else {
         if(socketObj.winner === user.color){
             console.log('you won the game!');
             // TODO: update opponent stats to reflect that they won
-            document.location.replace('/profile')
+            fetch('/sessions').then(res => {
+                if (res.ok) {
+                    res.json().then(res => {
+                        const id = res.user.id
+                        fetch(`/api/users/${id}`).then(res => {
+                            console.log('user api response', res)
+                            if (res.ok) {
+                                res.json().then(res => {
+                                    const userObj = res
+                                    console.log("hello",userObj)
+                                    let losses = userObj.UserData.losses
+                                    let ngames = userObj.UserData.ngames
+                                    let wins = userObj.UserData.wins
+                                    console.log('stats',wins, losses, ngames )
+                                    wins = wins + 1 
+                                    ngames = ngames + 1
+                                    console.log('updated stats',wins, losses, ngames )
+                                    //write logic to calculate rank later
+                                    fetch(`/api/users/${id}`, {
+                                        method: 'PUT',
+                                        body: JSON.stringify({ wins, ngames, losses}),
+                                        headers: {'Content-Type' : 'application/json',}
+                                    })
+                                    if (response.ok) {
+                                        console.log('put request?')
+                                        // document.location.replace('/profile')
+                                    } else {
+                                        alert("Failed to update")
+                                    }
+                                })
+                            } else {
+                                alert("Failed to fetch user object")
+                            }
+                        })
+                    })
+                } else {
+                    // TODO: Show that there was an error and that the friend request wasn't sent
+                    throw (err)
+                }
+            })
+            // document.location.replace('/profile')
         } else {
             console.log('you lost the game!');
             // TODO: update host stats to reflect that they lost
-            document.location.replace('/profile')
+            fetch('/sessions').then(res => {
+                if (res.ok) {
+                    res.json().then(res => {
+                        const id = res.user.id
+                        fetch(`/api/users/${id}`).then(res => {
+                            console.log('user api response', res)
+                            if (res.ok) {
+                                res.json().then(res => {
+                                    const userObj = res
+                                    console.log("hello",userObj)
+                                    let losses = userObj.UserData.losses
+                                    let ngames = userObj.UserData.ngames
+                                    let wins = userObj.UserData.wins
+                                    console.log('stats',wins, losses, ngames )
+                                    losses = losses + 1 
+                                    ngames = ngames + 1
+                                    console.log('updated stats',wins, losses, ngames )
+                                    //write logic to calculate rank later
+                                    fetch(`/api/users/${id}`, {
+                                        method: 'PUT',
+                                        body: JSON.stringify({ wins, losses, ngames}),
+                                        headers: {'Content-Type' : 'application/json',}
+                                    })
+                                    if (response.ok) {
+                                        console.log('put request?')
+                                        // document.location.replace('/profile')
+                                    } else {
+                                        alert("Failed to update")
+                                    }
+                                })
+                            } else {
+                                alert("Failed to fetch user object")
+                            }
+                        })
+                    })
+                } else {
+                    // TODO: Show that there was an error and that the friend request wasn't sent
+                    throw (err)
+                }
+            })
+            // document.location.replace('/profile')
         }
     }
 });
