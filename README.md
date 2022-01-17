@@ -1,5 +1,5 @@
 # Chess Game
-## Description
+## User Story
 
 Play chess with friends! We built this project so that you can play live chess with the people you want. Log into our website to see your chess scores and stats.  Add friends that are already registered on the platform! When you have a friend connection, a notification will appear and you can accept or decline the invite. If you want to start a game, click the start game button. This takes you to a lobby where you can invite them to a game of chess. When both players are in the lobby, click start game to see the game board.
 
